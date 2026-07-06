@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const SUPABASE_URL = "https://xpfwfdfivehigppdmhnx.supabase.co";
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY || "";
+// Key is set here directly as fallback — also set SUPABASE_SERVICE_KEY in Vercel env vars
+const SUPABASE_KEY =
+  process.env.SUPABASE_SERVICE_KEY ||
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhwZndmZGZpdmVoaWdwcGRtaG54Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTA1MjQwNCwiZXhwIjoyMDk2NjI4NDA0fQ.M0rlC_N6RjISw8q5v0Ygp7q_go_Pbhyaj6tTPxzLzIk";
 
 export async function POST(req: NextRequest) {
   try {
@@ -12,7 +15,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    // Save to Supabase prospects table
     const prospectRes = await fetch(`${SUPABASE_URL}/rest/v1/prospects`, {
       method: "POST",
       headers: {
@@ -35,7 +37,7 @@ export async function POST(req: NextRequest) {
     if (!prospectRes.ok) {
       const err = await prospectRes.text();
       console.error("Supabase error:", err);
-      // Still return success to user — don't expose DB errors
+      return NextResponse.json({ error: "Failed to save enquiry" }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });
