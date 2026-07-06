@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120">
+  <!-- Gold left bar -->
+  <rect x="0" y="8" width="10" height="104" rx="2" fill="#c8a96e"/>
+  <!-- BREW — bold white -->
+  <text x="24" y="88" 
+    font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" 
+    font-size="82" 
+    font-weight="900" 
+    fill="#ffffff" 
+    letter-spacing="-2">BREW</text>
+  <!-- TECH — light gold -->
+  <text x="238" y="88" 
+    font-family="'Arial', 'Helvetica Neue', Arial, sans-serif" 
+    font-size="82" 
+    font-weight="300" 
+    fill="#c8a96e" 
+    letter-spacing="-2">TECH</text>
+  <!-- Tagline -->
+  <text x="24" y="110" 
+    font-family="Arial, sans-serif" 
+    font-size="11" 
+    font-weight="400" 
+    fill="#8892b0" 
+    letter-spacing="3">PRECISION BREWING TECHNOLOGY  ·  EST 1996</text>
+</svg>

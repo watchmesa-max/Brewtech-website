@@ -11,11 +11,11 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="mb-4">
               <Image
-                src="/logos/brewtech-logo.png"
-                alt="Brew-Tech CC"
-                width={130}
-                height={45}
-                className="h-10 w-auto object-contain brightness-110"
+                src="/logos/brewtech-final-dark.svg"
+                alt="BrewTech"
+                width={200}
+                height={48}
+                className="h-10 w-auto"
               />
             </div>
             <p className="text-[#8892b0] text-sm leading-relaxed">
