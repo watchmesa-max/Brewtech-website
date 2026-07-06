@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Beaker, Zap, Globe, Award, ChevronRight, Phone, Mail } from "lucide-react";
 
 const products = [
@@ -16,21 +17,28 @@ const brands = [
     tagline: "Yeast Monitoring Technology",
     desc: "World-leading manufacturer of biomass sensors and yeast monitors used by major breweries across Africa and beyond.",
     href: "/brands/aber-instruments",
-    icon: "🔬",
+    logo: "/logos/aber.png",
   },
   {
     name: "Countstar",
     tagline: "Cell Analysis Systems",
     desc: "Automated cell counting and viability analysis solutions — fast, accurate results for demanding brewery QC environments.",
     href: "/brands/countstar",
-    icon: "🧫",
+    logo: "/logos/countstar.webp",
   },
   {
     name: "Scanjet Sweden",
     tagline: "Tank Cleaning Solutions",
     desc: "High-impact tank cleaning systems engineered for the brewing industry. Hygienic, efficient, and built to last.",
     href: "/brands/scanjet",
-    icon: "⚙️",
+    logo: "/logos/scanjet.png",
+  },
+  {
+    name: "Hopzoil",
+    tagline: "Premium Hop Oils",
+    desc: "The number one choice for hop oil additions — consistent aroma and flavour with precision dosing.",
+    href: "/products",
+    logo: "/logos/hopzoil.png",
   },
 ];
 
@@ -123,12 +131,20 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-4 gap-6">
             {brands.map((b) => (
               <Link key={b.name} href={b.href} className="card p-8 group block">
-                <div className="text-4xl mb-4">{b.icon}</div>
+                <div className="h-14 flex items-center mb-5">
+                  <Image
+                    src={b.logo}
+                    alt={b.name}
+                    width={160}
+                    height={56}
+                    className="h-10 w-auto object-contain"
+                  />
+                </div>
                 <div className="text-[#c8a96e] text-xs uppercase tracking-widest mb-2">{b.tagline}</div>
-                <h3 className="text-white text-xl font-bold mb-3">{b.name}</h3>
+                <h3 className="text-white text-lg font-bold mb-3">{b.name}</h3>
                 <p className="text-[#8892b0] text-sm leading-relaxed mb-5">{b.desc}</p>
                 <div className="flex items-center gap-2 text-[#c8a96e] text-sm font-medium">
                   <span>Learn More</span>

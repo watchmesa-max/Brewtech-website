@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const brands = [
@@ -31,14 +32,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex flex-col leading-tight">
-            <span className="text-xl font-bold text-white tracking-widest uppercase">
-              Brew<span className="text-[#c8a96e]">Tech</span>
-            </span>
-            <span className="text-[0.6rem] text-[#8892b0] tracking-[0.3em] uppercase">
-              CC
-            </span>
-          </div>
+          <Image
+            src="/logos/brewtech-logo.png"
+            alt="Brew-Tech CC"
+            width={140}
+            height={48}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}

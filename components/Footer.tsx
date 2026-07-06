@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
@@ -9,10 +10,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="mb-4">
-              <span className="text-2xl font-bold text-white tracking-widest uppercase">
-                Brew<span className="text-[#c8a96e]">Tech</span>
-              </span>
-              <div className="text-[0.6rem] text-[#8892b0] tracking-[0.3em] uppercase">CC</div>
+              <Image
+                src="/logos/brewtech-logo.png"
+                alt="Brew-Tech CC"
+                width={130}
+                height={45}
+                className="h-10 w-auto object-contain brightness-110"
+              />
             </div>
             <p className="text-[#8892b0] text-sm leading-relaxed">
               Premium brewery instrumentation and equipment for Africa. Elevating brewing excellence since day one.
