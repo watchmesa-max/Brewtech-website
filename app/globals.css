@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --bt-dark: #0a1628;
+  --bt-navy: #112240;
+  --bt-gold: #c8a96e;
+  --bt-gold-light: #e8c98a;
+  --bt-slate: #8892b0;
+  --bt-light: #ccd6f6;
+  --bt-white: #e6f1ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a1628;
+  color: #ccd6f6;
+  font-family: 'Inter', sans-serif;
+}
+
+.gold-text {
+  color: #c8a96e;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e6f1ff;
+  letter-spacing: -0.02em;
+}
+
+.section-subheading {
+  color: #8892b0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #c8a96e, #e8c98a);
+  color: #0a1628;
+  font-weight: 700;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(200, 169, 110, 0.4);
+}
+
+.btn-outline {
+  border: 1px solid #c8a96e;
+  color: #c8a96e;
+  font-weight: 600;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.btn-outline:hover {
+  background: rgba(200, 169, 110, 0.1);
+  transform: translateY(-2px);
+}
+
+.card {
+  background: #112240;
+  border: 1px solid rgba(200, 169, 110, 0.15);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(200, 169, 110, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(200, 169, 110, 0.3), transparent);
+}
+
+nav a {
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #c8a96e;
+}
