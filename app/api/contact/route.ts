@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const SUPABASE_URL = "https://xpfwfdfivehigppdmhnx.supabase.co";
-// Key is set here directly as fallback — also set SUPABASE_SERVICE_KEY in Vercel env vars
-const SUPABASE_KEY =
-  process.env.SUPABASE_SERVICE_KEY ||
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhwZndmZGZpdmVoaWdwcGRtaG54Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTA1MjQwNCwiZXhwIjoyMDk2NjI4NDA0fQ.M0rlC_N6RjISw8q5v0Ygp7q_go_Pbhyaj6tTPxzLzIk";
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhwZndmZGZpdmVoaWdwcGRtaG54Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTA1MjQwNCwiZXhwIjoyMDk2NjI4NDA0fQ.M0rlC_N6RjISw8q5v0Ygp7q_go_Pbhyaj6tTPxzLzIk";
 
 export async function POST(req: NextRequest) {
   try {
@@ -15,6 +12,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
+    // Split name into first/surname for the prospects table schema
+    const nameParts = (name as string).trim().split(" ");
+    const firstName = nameParts[0] || name;
+    const surname = nameParts.slice(1).join(" ") || "";
+
     const prospectRes = await fetch(`${SUPABASE_URL}/rest/v1/prospects`, {
       method: "POST",
       headers: {
@@ -24,13 +26,13 @@ export async function POST(req: NextRequest) {
         Prefer: "return=minimal",
       },
       body: JSON.stringify({
-        name: name,
+        first_name: firstName,
+        surname: surname,
         email: email,
         phone: phone || null,
-        company: company || null,
         status: "new",
         source: "Website Contact Form",
-        notes: `Subject: ${subject || "General"}\n\n${message}`,
+        notes: `Company: ${company || "N/A"}\nSubject: ${subject || "General"}\n\n${message}`,
       }),
     });
 
