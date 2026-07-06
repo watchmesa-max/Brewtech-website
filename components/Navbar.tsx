@@ -32,14 +32,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/logos/brewtech-logo.png"
-            alt="Brew-Tech CC"
-            width={140}
-            height={48}
-            className="h-10 w-auto object-contain"
-            priority
-          />
+          <div className="flex flex-col leading-none">
+            <span className="text-2xl font-black text-white tracking-tight uppercase" style={{letterSpacing: "-0.03em"}}>
+              Brew<span className="text-[#c8a96e]">Tech</span>
+            </span>
+            <span className="text-[0.55rem] text-[#c8a96e] tracking-[0.35em] uppercase font-medium">
+              CC · Est 1996
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
