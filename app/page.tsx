@@ -76,7 +76,7 @@ export default function HomePage() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center pt-28 md:pt-0">
           <div className="inline-flex items-center gap-2 bg-[#c8a96e]/10 border border-[#c8a96e]/30 rounded-full px-4 py-2 mb-8">
             <span className="w-2 h-2 bg-[#c8a96e] rounded-full animate-pulse" />
             <span className="text-[#c8a96e] text-xs font-medium tracking-widest uppercase">
@@ -102,8 +102,8 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-3xl mx-auto">
+          {/* Stats — hidden on mobile to avoid scroll indicator clash */}
+          <div className="hidden md:grid grid-cols-4 gap-6 mt-20 max-w-3xl mx-auto">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
                 <div className="text-3xl font-bold text-[#c8a96e]">{s.value}</div>
@@ -111,10 +111,20 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+
+          {/* Stats — mobile version, shown below hero */}
+          <div className="grid grid-cols-2 md:hidden gap-6 mt-12 max-w-xs mx-auto">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center">
+                <div className="text-2xl font-bold text-[#c8a96e]">{s.value}</div>
+                <div className="text-[#8892b0] text-xs mt-1 uppercase tracking-widest">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#8892b0]">
+        {/* Scroll indicator — hidden on mobile */}
+        <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-[#8892b0]">
           <span className="text-xs tracking-widest uppercase">Scroll</span>
           <div className="w-px h-8 bg-gradient-to-b from-[#c8a96e] to-transparent" />
         </div>
