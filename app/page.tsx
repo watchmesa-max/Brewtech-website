@@ -17,28 +17,32 @@ const brands = [
     tagline: "Yeast Monitoring Technology",
     desc: "World-leading manufacturer of biomass sensors and yeast monitors used by major breweries across Africa and beyond.",
     href: "/brands/aber-instruments",
-    logo: "/logos/aber.png",
+    logo: "/logos/aber-hires.svg",
+    logoBg: "bg-white",
   },
   {
     name: "Countstar",
     tagline: "Cell Analysis Systems",
     desc: "Automated cell counting and viability analysis solutions — fast, accurate results for demanding brewery QC environments.",
     href: "/brands/countstar",
-    logo: "/logos/countstar.webp",
+    logo: "/logos/countstar-hires.svg",
+    logoBg: "bg-white",
   },
   {
     name: "Scanjet Sweden",
     tagline: "Tank Cleaning Solutions",
     desc: "High-impact tank cleaning systems engineered for the brewing industry. Hygienic, efficient, and built to last.",
     href: "/brands/scanjet",
-    logo: "/logos/scanjet.png",
+    logo: "/logos/scanjet-hires.png",
+    logoBg: "bg-white",
   },
   {
     name: "Hopzoil",
     tagline: "Premium Hop Oils",
     desc: "The number one choice for hop oil additions — consistent aroma and flavour with precision dosing.",
     href: "/products",
-    logo: "/logos/hopzoil.png",
+    logo: "/logos/hopzoil-hires.png",
+    logoBg: "bg-white",
   },
 ];
 
@@ -142,8 +146,8 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-4 gap-6">
             {brands.map((b) => (
-              <Link key={b.name} href={b.href} className="card p-8 group block">
-                <div className="h-14 flex items-center mb-5">
+              <Link key={b.name} href={b.href} className="card p-6 group block">
+                <div className="h-16 flex items-center justify-center mb-5 bg-white rounded-lg px-4 py-2">
                   <Image
                     src={b.logo}
                     alt={b.name}

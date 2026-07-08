@@ -7,7 +7,7 @@ export default function CountstarPage() {
       <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-[#0d1f3c] to-[#0a1628]">
         <div className="max-w-7xl mx-auto">
           <p className="text-[#c8a96e] text-xs uppercase tracking-widest font-semibold mb-4">Our Brands</p>
-          <Image src="/logos/countstar.webp" alt="Countstar" width={220} height={80} className="h-14 w-auto object-contain mb-6" />
+          <Image src="/logos/countstar-hires.svg" alt="Countstar" width={220} height={80} className="h-14 w-auto object-contain mb-6" />
           <h1 className="text-5xl font-bold text-white mb-4">Countstar</h1>
           <p className="text-[#8892b0] text-xl max-w-2xl">
             Automated cell counting and viability analysis — fast, accurate, reliable.
